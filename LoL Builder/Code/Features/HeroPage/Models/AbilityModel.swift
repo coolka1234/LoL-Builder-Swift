@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ability: Identifiable {
+struct AbilityModel: Identifiable {
     let id: UUID = UUID()
     let name: String
     let description: String
