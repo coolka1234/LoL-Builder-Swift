@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AbilityRowView: View {
-    let ability: Ability
+    let ability: AbilityModel
     let isSelected: Bool
 
     var body: some View {
@@ -40,7 +40,7 @@ struct AbilityRowView: View {
 struct AbilityRowView_Previews: PreviewProvider {
     static var previews: some View {
         AbilityRowView(
-            ability: Ability(name: "Charm", description: "Ahri blows a kiss, charming and damaging enemies.", iconUrl: "https://via.placeholder.com/50"),
+            ability: AbilityModel(name: "Charm", description: "Ahri blows a kiss, charming and damaging enemies.", iconUrl: "https://via.placeholder.com/50"),
             isSelected: true
         )
         .previewLayout(.sizeThatFits)

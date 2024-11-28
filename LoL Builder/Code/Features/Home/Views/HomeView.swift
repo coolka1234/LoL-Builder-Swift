@@ -29,7 +29,6 @@ struct HomeView: View {
             }
             .padding(.horizontal)
 
-            // Horizontal list of champions
             Text("Champions")
                 .font(.headline)
                 .foregroundColor(.white)
@@ -44,7 +43,6 @@ struct HomeView: View {
                 .padding(.horizontal)
             }
 
-            // Vertical list of pro builds
             Text("Pro Builds")
                 .font(.headline)
                 .foregroundColor(.white)
