@@ -18,7 +18,6 @@ struct SearchView: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding(.horizontal)
 
-            // Category picker
             HStack(spacing: 0) {
                 Button(action: {
                     viewModel.selectedCategory = .heroes
@@ -45,7 +44,6 @@ struct SearchView: View {
             }
             .padding(.horizontal)
 
-            // Search results
             if viewModel.searchResults.isEmpty {
                 VStack(spacing: 16) {
                     Image(systemName: "magnifyingglass")
@@ -73,7 +71,7 @@ struct SearchView: View {
             Spacer()
         }
         .background(Color.black.ignoresSafeArea())
-        .onChange(of: viewModel.searchText) { _ in
+        .onChange(of: viewModel.searchText) { _ in //idk masonerii się nie podoba
             viewModel.performSearch()
         }
     }
