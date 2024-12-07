@@ -27,7 +27,7 @@ struct APITestView: View {
             }
 
             if let summoner = accountInfo {
-                Text("Summoner: \(summoner.puuid)")
+                Text("Summoner: \(summoner.puuid), \(summoner.message ?? "No message")")
                     .font(.headline)
             }
 

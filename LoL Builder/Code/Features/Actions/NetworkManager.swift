@@ -26,9 +26,9 @@ class NetworkManager {
             return
         }
         
-        var request = URLRequest(url: requestURL)
-        request.addValue("Bearer \(APIConfig.apiKey)", forHTTPHeaderField: "Authorization")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let request = URLRequest(url: requestURL)
+//        request.addValue("Bearer \(APIConfig.apiKey)", forHTTPHeaderField: "Authorization")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let _ = error {
@@ -45,6 +45,7 @@ class NetworkManager {
             
             do {
                 print(data)
+                print(response)
                 print(T.self)
                 let decodedResponse = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decodedResponse))

@@ -11,6 +11,9 @@ struct AccountAPI: Decodable {
     let puuid: String
     let gameName: String
     let tagLine: String
+    let message: String?
+    let status_code: Int?
+    let error: String?
 }
 class AccountService {
     func getAccountPUUID(gameName: String, tagLine: String, completion: @escaping (Result<AccountAPI, NetworkError>) -> Void) {
