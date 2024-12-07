@@ -13,6 +13,7 @@ struct ProBuildView: View {
 
     var body: some View {
         VStack(spacing: 24) {
+            Spacer()
             AsyncImage(url: URL(string: viewModel.proBuild.playerImageUrl)) { image in
                 image
                     .resizable()
@@ -53,6 +54,7 @@ struct ProBuildView: View {
                     }
                 }
             }
+            Spacer()
         }
         .padding()
         .background(Color.black.ignoresSafeArea())
