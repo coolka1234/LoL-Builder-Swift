@@ -14,6 +14,7 @@ struct Summoner: Decodable {
     let profileIconId: Int
     let summonerLevel: Int
 }
+//good luck with builds lol
 
 class SummonerService {
     func getSummonerInfo(byName name: String, completion: @escaping (Result<Summoner, NetworkError>) -> Void) {
