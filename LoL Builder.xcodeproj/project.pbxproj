@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DE8A9C6C2D04C82400ECEB13 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE8A9C6B2D04C81A00ECEB13 /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		DEF31ADA2CEA887E00238FDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE8A9C6B2D04C81A00ECEB13 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DEF31AC62CEA887800238FDF /* LoL Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoL Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF31AD92CEA887E00238FDF /* LoL BuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoL BuilderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF31AE32CEA887E00238FDF /* LoL BuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoL BuilderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,7 @@
 		DEF31ABD2CEA887800238FDF = {
 			isa = PBXGroup;
 			children = (
+				DE8A9C6B2D04C81A00ECEB13 /* .gitignore */,
 				DEF31AC82CEA887800238FDF /* LoL Builder */,
 				DEF31ADC2CEA887E00238FDF /* LoL BuilderTests */,
 				DEF31AE62CEA887E00238FDF /* LoL BuilderUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8A9C6C2D04C82400ECEB13 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
