@@ -22,6 +22,7 @@ class NetworkManager {
     func fetch<T: Decodable>(_ url: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
         guard let requestURL = URL(string: url) else {
             completion(.failure(.invalidURL))
+            print("error: invalidURL")
             return
         }
         
@@ -32,19 +33,24 @@ class NetworkManager {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let _ = error {
                 completion(.failure(.requestFailed))
+                print("error: requestFailed")
                 return
             }
             
             guard let data = data else {
                 completion(.failure(.requestFailed))
+                print("error: requestFailed")
                 return
             }
             
             do {
+                print(data)
+                print(T.self)
                 let decodedResponse = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decodedResponse))
             } catch {
                 completion(.failure(.decodingError))
+                print("error: decodingError")
             }
         }.resume()
     }
