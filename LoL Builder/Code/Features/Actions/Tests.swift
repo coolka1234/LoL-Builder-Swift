@@ -31,7 +31,7 @@ struct APITestView: View {
                     .font(.headline)
             }
             if let account = summonerInfo {
-                Text("Account: \(account.id), \(account.revisionDate), \(account.summonerLevel)")
+                Text("Account: \(account.id), Revision Date: \(account.revisionDate), Summoner Level: \(account.summonerLevel), Pfp id:  \(account.profileIconId)")
                     .font(.headline)
             }
 
@@ -85,7 +85,7 @@ struct APITestView: View {
 //        }
 //    }
     func fetchAccountInfo() {
-        accountService.getAccountPUUID(gameName: "tygrysor", tagLine: "EUNE") { result in
+        accountService.getAccountPUUID(gameName: "Teluris", tagLine: "EUNE") { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let account):
@@ -101,7 +101,7 @@ struct APITestView: View {
     func fetchByGameTag() {
         print("fetching")
         SummonerService().getSummonerInfo(byName: "tygrysor", tagLine: "EUNE") { result in
-            DispatchQueue.main.async {
+//            DispatchQueue.main.async {
                 switch result {
                 case .success(let summoner):
                     self.summonerInfo = summoner
@@ -111,7 +111,7 @@ struct APITestView: View {
                     self.errorMessage = error.localizedDescription
                     print("error")
                 }
-            }
+//            }
         }
     }
 }
