@@ -34,9 +34,22 @@
 		DEF31AE32CEA887E00238FDF /* LoL BuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoL BuilderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DE8A9CDE2D06161900ECEB13 /* Exceptions for "LoL Builder" folder in "LoL Builder" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Code/Features/Home/Views/Untitled.swift,
+			);
+			target = DEF31AC52CEA887800238FDF /* LoL Builder */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DEF31AC82CEA887800238FDF /* LoL Builder */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DE8A9CDE2D06161900ECEB13 /* Exceptions for "LoL Builder" folder in "LoL Builder" target */,
+			);
 			path = "LoL Builder";
 			sourceTree = "<group>";
 		};

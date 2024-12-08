@@ -46,7 +46,9 @@ struct APITestView: View {
             .buttonStyle(.borderedProminent)
 
             Button("Fetch Summoner Info") {
-                fetchByGameTag()
+//                fetchByGameTag()
+//                var sAPI=APISimple()
+//                summonerInfo=sAPI.getSummonerSimple(gameName: "tygrysor", gameTag: "EUNE", region: "europe")
             }
             .buttonStyle(.borderedProminent)
             Button("Fetch Account Info") {

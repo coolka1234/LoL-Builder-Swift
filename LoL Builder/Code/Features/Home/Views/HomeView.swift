@@ -9,23 +9,46 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
+    @State private var showPopup = false
+    @State private var gameName = ""
+    @State private var tagLine = ""
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Text(viewModel.accountName)
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Spacer()
-                NavigationLink(destination: SearchView()) {
-                    Image(systemName: "magnifyingglass")  
+            HStack(spacing: 16) {
+                ZStack {
+                    Image(viewModel.profileImageName)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(width: 60, height: 60)
+                                                .clipShape(Circle())
+                                                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 3)
+
+                    if let level = viewModel.summonerLevel {
+                        Text("\(level)")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(6)
+                            .background(Circle().fill(Color.blue))
+                            .offset(x: 20, y: 20)
+                    }
+                }
+
+                VStack(alignment: .leading) {
+                    Text(viewModel.accountName)
+                        .font(.headline)
                         .foregroundColor(.white)
-                        .font(.title)
-                        .padding()
+                        .onTapGesture {
+                            showPopup = true
+                        }
+                                
+                        
+                    Text("Tap to edit account")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
             }
-            .padding(.horizontal)
 
             Text("Champions")
                 .font(.headline)
@@ -60,6 +83,18 @@ struct HomeView: View {
             }
         }
         .background(Color.black.ignoresSafeArea())
+//        .navigationBarHidden(true)
+        .popover(isPresented: $showPopup) {
+            SummonerInputPopup(
+                gameName: $gameName,
+                tagLine: $tagLine,
+                onCancel: { showPopup = false },
+                onConfirm: {
+                    viewModel.updateSummoner(gameName: gameName, tagLine: tagLine)
+                    showPopup = false
+                }
+            )
+        }
     }
 }
 let sampleChampions = [
@@ -74,5 +109,43 @@ let proBuilds = [
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+struct SummonerInputPopup: View {
+    @Binding var gameName: String
+    @Binding var tagLine: String
+    var onCancel: () -> Void
+    var onConfirm: () -> Void
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("Edit Summoner")
+                .font(.headline)
+            TextField("Game Name", text: $gameName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+            TextField("Tag Line", text: $tagLine)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding(.horizontal)
+            HStack {
+                Button("Cancel") {
+                    onCancel()
+                }
+                .foregroundColor(.red)
+
+                Spacer()
+
+                Button("Confirm") {
+                    onConfirm()
+                }
+                .foregroundColor(.blue)
+            }
+            .padding()
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(12)
+        .shadow(radius: 10)
+        .padding(.horizontal, 32)
     }
 }
