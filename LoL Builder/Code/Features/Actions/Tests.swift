@@ -30,6 +30,10 @@ struct APITestView: View {
                 Text("Summoner: \(summoner.puuid), \(summoner.message ?? "No message")")
                     .font(.headline)
             }
+            if let account = summonerInfo {
+//                Text("Account: \(account.id), \(account.name ?? "No message"), \(account.summonerLevel ?? 0)")
+                    .font(.headline)
+            }
 
             if let error = errorMessage {
                 Text("Error: \(error)")
@@ -43,6 +47,10 @@ struct APITestView: View {
 
             Button("Fetch Summoner Info") {
                 fetchAccountInfo()
+            }
+            .buttonStyle(.borderedProminent)
+            Button("Fetch Account Info") {
+//                fetchSummonerInfo()
             }
             .buttonStyle(.borderedProminent)
         }
@@ -63,19 +71,19 @@ struct APITestView: View {
         }
     }
 
-    func fetchSummonerInfo() {
-        summonerService.getSummonerInfo(byName: "Teluris") { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let summoner):
-                    self.summonerInfo = summoner
-                    self.errorMessage = nil
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                }
-            }
-        }
-    }
+//    func fetchSummonerInfo() {
+//        summonerService.getSummonerInfo(byName: "Teluris") { result in
+//            DispatchQueue.main.async {
+//                switch result {
+//                case .success(let summoner):
+//                    self.summonerInfo = summoner
+//                    self.errorMessage = nil
+//                case .failure(let error):
+//                    self.errorMessage = error.localizedDescription
+//                }
+//            }
+//        }
+//    }
     func fetchAccountInfo() {
         accountService.getAccountPUUID(gameName: "tygrysor", tagLine: "EUNE") { result in
             DispatchQueue.main.async {
