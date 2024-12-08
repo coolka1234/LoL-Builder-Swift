@@ -44,10 +44,11 @@ class NetworkManager {
             }
             
             do {
-//                print(data)
-//                print(response)
-//                print(T.self)
+                print(data)
+                print(response)
+                print(T.self)
                 let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+                print(decodedResponse) // debug
                 completion(.success(decodedResponse))
             } catch {
                 completion(.failure(.decodingError))

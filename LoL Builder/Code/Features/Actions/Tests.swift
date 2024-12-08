@@ -31,7 +31,7 @@ struct APITestView: View {
                     .font(.headline)
             }
             if let account = summonerInfo {
-//                Text("Account: \(account.id), \(account.name ?? "No message"), \(account.summonerLevel ?? 0)")
+                Text("Account: \(account.id), \(account.revisionDate), \(account.summonerLevel)")
                     .font(.headline)
             }
 
@@ -46,11 +46,11 @@ struct APITestView: View {
             .buttonStyle(.borderedProminent)
 
             Button("Fetch Summoner Info") {
-                fetchAccountInfo()
+                fetchByGameTag()
             }
             .buttonStyle(.borderedProminent)
             Button("Fetch Account Info") {
-//                fetchSummonerInfo()
+                fetchAccountInfo()
             }
             .buttonStyle(.borderedProminent)
         }
@@ -94,6 +94,22 @@ struct APITestView: View {
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
                     
+                }
+            }
+        }
+    }
+    func fetchByGameTag() {
+        print("fetching")
+        SummonerService().getSummonerInfo(byName: "tygrysor", tagLine: "EUNE") { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let summoner):
+                    self.summonerInfo = summoner
+                    print(summoner)
+                    self.errorMessage = nil
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    print("error")
                 }
             }
         }
