@@ -38,7 +38,7 @@
 		DE8A9CDE2D06161900ECEB13 /* Exceptions for "LoL Builder" folder in "LoL Builder" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Code/Features/Home/Views/EditSummonerView.swift,
+				Code/Features/Common/View/EditSummonerView.swift,
 			);
 			target = DEF31AC52CEA887800238FDF /* LoL Builder */;
 		};
