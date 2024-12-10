@@ -55,11 +55,15 @@
 		};
 		DEF31ADC2CEA887E00238FDF /* LoL BuilderTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "LoL BuilderTests";
 			sourceTree = "<group>";
 		};
 		DEF31AE62CEA887E00238FDF /* LoL BuilderUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "LoL BuilderUITests";
 			sourceTree = "<group>";
 		};
@@ -90,6 +94,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210F5379CCB3186D19360407 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DEF31ABD2CEA887800238FDF = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +109,7 @@
 				DEF31ADC2CEA887E00238FDF /* LoL BuilderTests */,
 				DEF31AE62CEA887E00238FDF /* LoL BuilderUITests */,
 				DEF31AC72CEA887800238FDF /* Products */,
+				210F5379CCB3186D19360407 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,8 +142,6 @@
 				DEF31AC82CEA887800238FDF /* LoL Builder */,
 			);
 			name = "LoL Builder";
-			packageProductDependencies = (
-			);
 			productName = "LoL Builder";
 			productReference = DEF31AC62CEA887800238FDF /* LoL Builder.app */;
 			productType = "com.apple.product-type.application";
@@ -153,8 +163,6 @@
 				DEF31ADC2CEA887E00238FDF /* LoL BuilderTests */,
 			);
 			name = "LoL BuilderTests";
-			packageProductDependencies = (
-			);
 			productName = "LoL BuilderTests";
 			productReference = DEF31AD92CEA887E00238FDF /* LoL BuilderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -176,8 +184,6 @@
 				DEF31AE62CEA887E00238FDF /* LoL BuilderUITests */,
 			);
 			name = "LoL BuilderUITests";
-			packageProductDependencies = (
-			);
 			productName = "LoL BuilderUITests";
 			productReference = DEF31AE32CEA887E00238FDF /* LoL BuilderUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -413,6 +419,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LoL Builder/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/coolka/Library/Developer/Xcode/DerivedData/LoL_Builder-campyvccuelneyhktauaocysemhq/Build/Products/Debug-iphoneos/LeagueAPI/LeagueAPI.framework";
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -450,6 +457,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LoL Builder/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/coolka/Library/Developer/Xcode/DerivedData/LoL_Builder-campyvccuelneyhktauaocysemhq/Build/Products/Debug-iphoneos/LeagueAPI/LeagueAPI.framework";
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
