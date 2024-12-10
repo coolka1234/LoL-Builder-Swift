@@ -46,7 +46,6 @@ struct HomeView: View {
                     }
                 }
 
-                // Horizontal list of champions
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         ForEach(viewModel.champions, id: \.id) { champion in
@@ -55,7 +54,6 @@ struct HomeView: View {
                     }
                 }
 
-                // Vertical list of pro builds
                 List(viewModel.proBuilds, id: \.id) { build in
                     ProBuildRowView(proBuild: build)
                 }
