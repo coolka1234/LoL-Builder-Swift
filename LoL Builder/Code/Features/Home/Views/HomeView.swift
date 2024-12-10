@@ -48,16 +48,26 @@ struct HomeView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
-                        ForEach(viewModel.champions, id: \.id) { champion in
-                            ChampionRowView(champion: champion)
+                        ForEach(sampleChampions) { champion in
+                            NavigationLink(destination: HeroView(viewModel: HeroViewModel(name: champion.name))) {
+                                Text(champion.name)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(8)
+                            }
                         }
                     }
                 }
 
-                List(viewModel.proBuilds, id: \.id) { build in
-                    ProBuildRowView(proBuild: build)
+                List(proBuilds) { build in
+                    NavigationLink(destination: ProBuildView()) {
+                        Text(build.title)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
                 }
-                .listStyle(PlainListStyle())
+                .listRowBackground(Color.gray.opacity(0.2))
 
             }
             .padding()
@@ -66,6 +76,15 @@ struct HomeView: View {
         }
     }
 }
+let sampleChampions = [
+    Champion(name: "Ahri", imageUrl: "https://via.placeholder.com/300"),
+    Champion(name: "Yasuo", imageUrl: "https://via.placeholder.com/300"),
+]
+let proBuilds = [
+    ProBuild(title: "Ahri Mid Build", description: "AP Assassin", imageUrl: "https://via.placeholder.com/100"),
+    ProBuild(title: "Yasuo Top Build", description: "AD Fighter", imageUrl: "https://via.placeholder.com/100"),
+    ProBuild(title: "Lux Support Build", description: "AP Utility", imageUrl: "https://via.placeholder.com/100")
+]
 
 struct EditSummonerView: View {
     @Environment(\.presentationMode) var presentationMode
