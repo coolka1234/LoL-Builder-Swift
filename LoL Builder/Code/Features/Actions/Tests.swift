@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LeagueAPI
 
 struct APITestView: View {
     @State private var championInfo: ChampionAPI?
@@ -16,6 +17,20 @@ struct APITestView: View {
     let championService = ChampionService()
     let summonerService = SummonerService()
     let accountService = AccountService()
+    func getStuff(){
+        print("Getting stuff")
+        let league=LeagueAPI(APIToken:"RGAPI-e2db331e-5ebb-492a-8476-795de41f1ad5")
+        
+        league.lolAPI.getChampionRotation(on: .EUW) { (rotations, errorMsg) in
+            if let rotations = rotations {
+                print("Success")
+                print(rotations.rotation)
+            }
+            else {
+                print("Request failed cause: \(errorMsg ?? "No error description")")
+            }
+        }
+    }
 
     var body: some View {
         VStack(spacing: 20) {

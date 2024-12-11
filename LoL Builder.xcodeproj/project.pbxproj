@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE35C07D2D09EA3B0014E1E3 /* LeagueAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB522542D09DFBA00DDBEC4 /* LeagueAPI.framework */; };
+		DE35C07E2D09EA3B0014E1E3 /* LeagueAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEB522542D09DFBA00DDBEC4 /* LeagueAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE8A9C6C2D04C82400ECEB13 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE8A9C6B2D04C81A00ECEB13 /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +29,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DE35C07F2D09EA3B0014E1E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DE35C07E2D09EA3B0014E1E3 /* LeagueAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DE8A9C6B2D04C81A00ECEB13 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DEB522542D09DFBA00DDBEC4 /* LeagueAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeagueAPI.framework; path = "Carthage/Build/LeagueAPI.xcframework/ios-arm64_x86_64-simulator/LeagueAPI.framework"; sourceTree = "<group>"; };
 		DEF31AC62CEA887800238FDF /* LoL Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LoL Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF31AD92CEA887E00238FDF /* LoL BuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoL BuilderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEF31AE32CEA887E00238FDF /* LoL BuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoL BuilderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,15 +72,11 @@
 		};
 		DEF31ADC2CEA887E00238FDF /* LoL BuilderTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "LoL BuilderTests";
 			sourceTree = "<group>";
 		};
 		DEF31AE62CEA887E00238FDF /* LoL BuilderUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "LoL BuilderUITests";
 			sourceTree = "<group>";
 		};
@@ -74,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE35C07D2D09EA3B0014E1E3 /* LeagueAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,11 +108,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		210F5379CCB3186D19360407 /* Pods */ = {
+		DE0A5B8F2D09CEAC001BCD59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEB522542D09DFBA00DDBEC4 /* LeagueAPI.framework */,
 			);
-			path = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DEF31ABD2CEA887800238FDF = {
@@ -109,7 +124,7 @@
 				DEF31ADC2CEA887E00238FDF /* LoL BuilderTests */,
 				DEF31AE62CEA887E00238FDF /* LoL BuilderUITests */,
 				DEF31AC72CEA887800238FDF /* Products */,
-				210F5379CCB3186D19360407 /* Pods */,
+				DE0A5B8F2D09CEAC001BCD59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +148,7 @@
 				DEF31AC22CEA887800238FDF /* Sources */,
 				DEF31AC32CEA887800238FDF /* Frameworks */,
 				DEF31AC42CEA887800238FDF /* Resources */,
+				DE35C07F2D09EA3B0014E1E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,7 +366,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -405,6 +421,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -418,8 +435,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LoL Builder/Preview Content\"";
+				DEVELOPMENT_TEAM = Z82XQ8J5SY;
 				ENABLE_PREVIEWS = YES;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/coolka/Library/Developer/Xcode/DerivedData/LoL_Builder-campyvccuelneyhktauaocysemhq/Build/Products/Debug-iphoneos/LeagueAPI/LeagueAPI.framework";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/LeagueAPI.xcframework/ios-arm64",
+					"$(PROJECT_DIR)/Carthage/Build/LeagueAPI.xcframework/ios-arm64_x86_64-simulator",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/LeagueAPI.xcframework/ios-arm64",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -436,6 +462,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "pwr.LoL-Builder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -443,6 +470,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -456,8 +484,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LoL Builder/Preview Content\"";
+				DEVELOPMENT_TEAM = Z82XQ8J5SY;
 				ENABLE_PREVIEWS = YES;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/coolka/Library/Developer/Xcode/DerivedData/LoL_Builder-campyvccuelneyhktauaocysemhq/Build/Products/Debug-iphoneos/LeagueAPI/LeagueAPI.framework";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/LeagueAPI.xcframework/ios-arm64",
+					"$(PROJECT_DIR)/Carthage/Build/LeagueAPI.xcframework/ios-arm64_x86_64-simulator",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/LeagueAPI.xcframework/ios-arm64",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -474,6 +511,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "pwr.LoL-Builder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -481,6 +519,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;

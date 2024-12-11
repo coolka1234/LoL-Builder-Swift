@@ -1,4 +1,6 @@
 import SwiftUI
+import LeagueAPI
+
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     @State private var gameName = ""
@@ -40,7 +42,7 @@ struct HomeView: View {
                                 .foregroundColor(.white)
                         }
 
-                        Text("Tap to edit account")
+                        Text("Tap to edit account test test test")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
