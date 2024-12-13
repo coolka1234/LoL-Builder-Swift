@@ -1,5 +1,5 @@
 # Nazwa (kodowa) aplikacji:
-League of Legenda Builder
+League of Legends Builder
 # Opis Aplikacji:
 Aplikacja pozwalająca na losowanie postaci, ze względu na wybrane filtry. Dodatkowo pobiera najnowsze „buildy”(sposoby gry) profesjonalnych graczy i pozwala je wykorzystać do własnej gry. Dzięki temu zwiększa możliwości gracza (użytkownika) i daje mu większą frajdę z gry.
 # Cele biznesowe:
