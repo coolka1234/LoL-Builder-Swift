@@ -26,6 +26,22 @@ struct HomeView: View {
                                 .offset(x: 20, y: 20)
                         }
                     }
+                Spacer()
+                Button(action: {
+                    print("Search button tapped!")
+                }){
+                    NavigationLink(destination: SearchView())
+                    {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .padding()
+                    }
+                }
+                .background(Color.blue)
+                .clipShape(Circle())
+                    
+                        
                     
                     VStack(alignment: .leading) {
                         NavigationLink(destination: EditSummonerView(
@@ -46,7 +62,6 @@ struct HomeView: View {
                     }
                 }
                 
-                // Horizontal list of champions
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 16) {
                         ForEach(viewModel.champions, id: \.id) { champion in
@@ -60,7 +75,6 @@ struct HomeView: View {
                     }
                 }
                 
-                // Vertical list of pro builds
                 List(viewModel.proBuilds, id: \.id) { build in
                     NavigationLink(
                         destination: ProBuildView(),

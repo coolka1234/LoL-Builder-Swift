@@ -54,11 +54,10 @@ struct ProBuildView: View {
                     }
                 }
             }
-            Spacer()
         }
+        .frame(minWidth:0,maxWidth: .infinity, alignment: .topLeading)
         .padding()
         .background(Color.black.ignoresSafeArea())
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
