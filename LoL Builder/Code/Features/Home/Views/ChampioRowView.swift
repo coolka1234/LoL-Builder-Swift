@@ -9,19 +9,15 @@ import SwiftUI
 
 struct ChampionRowView: View {
     let champion: Champion
-
+    
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: champion.imageUrl)) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView()
-            }
-            .frame(width: 50, height: 50)
-            .clipShape(Circle())
-
+            Image(champion.imageUrl)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+            
             Text(champion.name)
                 .font(.caption)
                 .foregroundColor(.white)

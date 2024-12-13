@@ -21,7 +21,7 @@ class HomeViewModel: ObservableObject {
     
     func loadChampions() {
         champions = [
-            Champion(name: "Ahri", imageUrl: "https://via.placeholder.com/50"),
+            Champion(name: "Ahri", imageUrl: "champion_ahri"),
             Champion(name: "Yasuo", imageUrl: "https://via.placeholder.com/50"),
             Champion(name: "Lux", imageUrl: "https://via.placeholder.com/50")
         ]

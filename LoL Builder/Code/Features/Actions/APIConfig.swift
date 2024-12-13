@@ -1,3 +1,11 @@
+//
+//  APIConfig.swift
+//  LoL Builder
+//
+//  Created by Coolka on 13/12/2024.
+//
+
+
 import Foundation
 
 struct APIConfig {
