@@ -46,6 +46,7 @@ struct HeroView: View {
                         .padding(.vertical, 5)
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 if let ability = selectedAbility {
                     VStack(alignment: .leading, spacing: 8) {

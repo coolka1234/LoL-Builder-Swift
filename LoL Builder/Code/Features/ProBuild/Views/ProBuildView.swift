@@ -58,6 +58,7 @@ struct ProBuildView: View {
         }
         .padding()
         .background(Color.black.ignoresSafeArea())
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
