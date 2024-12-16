@@ -14,13 +14,7 @@ struct ProBuildView: View {
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
-            AsyncImage(url: URL(string: viewModel.proBuild.playerImageUrl)) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-            } placeholder: {
-                ProgressView()
-            }
+            Image(viewModel.proBuild.playerImageUrl)
             .frame(width: 120, height: 120)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 2))
@@ -32,34 +26,20 @@ struct ProBuildView: View {
                 .foregroundColor(.white)
 
             HStack(spacing: 16) {
-                ForEach(viewModel.proBuild.items.indices, id: \.self) { index in
-                    if let url = URL(string: viewModel.proBuild.items[index]), !viewModel.proBuild.items[index].isEmpty {
-                        AsyncImage(url: url) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                        } placeholder: {
-                            ProgressView()
-                        }
+                ForEach(viewModel.proBuild.items, id: \.self) { index in
+                        Image(index)
+                        .resizable()
+                        .scaledToFit()
                         .frame(width: 50, height: 50)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
-                    } else {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.gray.opacity(0.3))
-                            .frame(width: 50, height: 50)
-                            .overlay(
-                                Image(systemName: "plus")
-                                    .foregroundColor(.white)
-                            )
                     }
                 }
             }
+            .frame(minWidth:0,maxWidth: .infinity, alignment: .topLeading)
+            .padding()
+            .background(Color.black.ignoresSafeArea())
         }
-        .frame(minWidth:0,maxWidth: .infinity, alignment: .topLeading)
-        .padding()
-        .background(Color.black.ignoresSafeArea())
     }
-}
 
 struct ProBuildView_Previews: PreviewProvider {
     static var previews: some View {

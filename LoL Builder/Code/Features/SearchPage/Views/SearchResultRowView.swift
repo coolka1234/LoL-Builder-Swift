@@ -12,13 +12,7 @@ struct SearchResultRowView: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage(url: URL(string: result.imageUrl)) { image in
-                image
-                    .resizable()
-                    .scaledToFill()
-            } placeholder: {
-                ProgressView()
-            }
+            Image(result.imageUrl)
             .frame(width: 50, height: 50)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 

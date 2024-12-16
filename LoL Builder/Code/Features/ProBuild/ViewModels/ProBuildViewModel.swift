@@ -11,15 +11,16 @@ import Foundation
 class ProBuildViewModel: ObservableObject {
     @Published var proBuild: SingleProBuild = SingleProBuild(
         playerName: "Faker",
-        playerImageUrl: "https://via.placeholder.com/150",
+        playerImageUrl: "probuild_1",
         items: [
-            "https://via.placeholder.com/50",
-            "https://via.placeholder.com/50",
-            "",
-            "https://via.placeholder.com/50",
-            "",
-            "https://via.placeholder.com/50"
+            "item1",
+            "item2",
+            "blank",
+            "item3",
+            "blank",
+            "item4"
         ]
     )
+    
     
 }

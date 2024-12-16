@@ -7,13 +7,7 @@ struct HeroView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                AsyncImage(url: URL(string: viewModel.hero.imageUrl)) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
+                Image(viewModel.hero.imageUrl).resizable().aspectRatio(contentMode: .fill).clipped()
                 .frame(height: 300)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(radius: 10)

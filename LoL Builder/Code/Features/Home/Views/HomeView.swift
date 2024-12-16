@@ -7,9 +7,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 16) {
-                // HStack for profile and search button
                 HStack(spacing: 16) {
-                    // Profile image and level
                     ZStack {
                         Image(viewModel.profileImageName)
                             .resizable()
@@ -29,14 +27,9 @@ struct HomeView: View {
                         }
                     }
                     
-                    // Summoner name
-                    Text(viewModel.accountName)
-                        .font(.headline)
-                        .foregroundColor(.white)
                     
                     Spacer()
                     
-                    // Search button
                     NavigationLink(destination: SearchView()) {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.white)
@@ -48,29 +41,29 @@ struct HomeView: View {
                 }
                 .padding()
                 
-                // Rest of the home view content here
                 Spacer()
+                VStack(alignment: .leading) {
+                    NavigationLink(destination: EditSummonerView(
+                        gameName: $gameName,
+                        tagLine: $tagLine,
+                        onConfirm: { newGameName, newTagLine in
+                            viewModel.updateSummoner(gameName: newGameName, tagLine: newTagLine)
+                        }
+                    )) {
+                        Text(viewModel.accountName)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Text("Tap to edit account")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
             }
             .background(Color.black.ignoresSafeArea())            
             
             
-            VStack(alignment: .leading) {
-                NavigationLink(destination: EditSummonerView(
-                    gameName: $gameName,
-                    tagLine: $tagLine,
-                    onConfirm: { newGameName, newTagLine in
-                        viewModel.updateSummoner(gameName: newGameName, tagLine: newTagLine)
-                    }
-                )) {
-                    Text(viewModel.accountName)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                }
-                
-                Text("Tap to edit account")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-            }
+
         }
         
         ScrollView(.horizontal, showsIndicators: false) {
@@ -143,8 +136,6 @@ struct HomeView: View {
                 Spacer()
             }
             .padding()
-            //        .background(Color(UIColor.systemBackground).ignoresSafeArea())
-            //        .navigationBarHidden(true)
         }
     }
 

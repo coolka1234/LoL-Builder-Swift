@@ -21,17 +21,17 @@ class HomeViewModel: ObservableObject {
     
     func loadChampions() {
         champions = [
-            Champion(name: "Ahri", imageUrl: "champion_ahri"),
-            Champion(name: "Yasuo", imageUrl: "https://via.placeholder.com/50"),
-            Champion(name: "Lux", imageUrl: "https://via.placeholder.com/50")
+            Champion(name: "Ahri", imageUrl: "ahri"),
+            Champion(name: "Yasuo", imageUrl: "yasuo"),
+            Champion(name: "Lux", imageUrl: "lux")
         ]
     }
     
     func loadProBuilds() {
         proBuilds = [
-            ProBuild(title: "Ahri Mid Build", description: "AP Assassin", imageUrl: "https://via.placeholder.com/100"),
-            ProBuild(title: "Yasuo Top Build", description: "AD Fighter", imageUrl: "https://via.placeholder.com/100"),
-            ProBuild(title: "Lux Support Build", description: "AP Utility", imageUrl: "https://via.placeholder.com/100")
+            ProBuild(title: "Ahri Mid Build", description: "AP Assassin", imageUrl: "probuild_1"),
+            ProBuild(title: "Yasuo Top Build", description: "AD Fighter", imageUrl: "prbuild_2"),
+            ProBuild(title: "Lux Support Build", description: "AP Utility", imageUrl: "probuild_2")
         ]
     }
     private let summonerService = SummonerService()
