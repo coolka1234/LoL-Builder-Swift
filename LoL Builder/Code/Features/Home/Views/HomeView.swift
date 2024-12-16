@@ -7,7 +7,9 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 16) {
+                // HStack for profile and search button
                 HStack(spacing: 16) {
+                    // Profile image and level
                     ZStack {
                         Image(viewModel.profileImageName)
                             .resizable()
@@ -26,76 +28,80 @@ struct HomeView: View {
                                 .offset(x: 20, y: 20)
                         }
                     }
-                Spacer()
-                Button(action: {
-                    print("Search button tapped!")
-                }){
-                    NavigationLink(destination: SearchView())
-                    {
+                    
+                    // Summoner name
+                    Text(viewModel.accountName)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    // Search button
+                    NavigationLink(destination: SearchView()) {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.white)
                             .font(.title)
                             .padding()
+                            .background(Color.blue)
+                            .clipShape(Circle())
                     }
-                }
-                .background(Color.blue)
-                .clipShape(Circle())
-                    
-                        
-                    
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: EditSummonerView(
-                            gameName: $gameName,
-                            tagLine: $tagLine,
-                            onConfirm: { newGameName, newTagLine in
-                                viewModel.updateSummoner(gameName: newGameName, tagLine: newTagLine)
-                            }
-                        )) {
-                            Text(viewModel.accountName)
-                                .font(.headline)
-                                .foregroundColor(.white)
-                        }
-                        
-                        Text("Tap to edit account")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 16) {
-                        ForEach(viewModel.champions, id: \.id) { champion in
-                            NavigationLink(
-                                destination: HeroView(viewModel: HeroViewModel(name:champion.name)),
-                                label: {
-                                    ChampionRowView(champion: champion)
-                                }
-                                                                           )
-                        }
-                    }
-                }
-                
-                List(viewModel.proBuilds, id: \.id) { build in
-                    NavigationLink(
-                        destination: ProBuildView(),
-                        label:{
-                                ProBuildRowView(proBuild: build)
-                            }
-                    )
-                        Text(build.title)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
-                    .listRowBackground(Color.black)
-                    
-                    
                 }
                 .padding()
-                .background(Color.black.ignoresSafeArea())
-                //            .navigationBarHidden(true)
+                
+                // Rest of the home view content here
+                Spacer()
+            }
+            .background(Color.black.ignoresSafeArea())            
+            
+            
+            VStack(alignment: .leading) {
+                NavigationLink(destination: EditSummonerView(
+                    gameName: $gameName,
+                    tagLine: $tagLine,
+                    onConfirm: { newGameName, newTagLine in
+                        viewModel.updateSummoner(gameName: newGameName, tagLine: newTagLine)
+                    }
+                )) {
+                    Text(viewModel.accountName)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
+                
+                Text("Tap to edit account")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
             }
         }
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 16) {
+                ForEach(viewModel.champions, id: \.id) { champion in
+                    NavigationLink(
+                        destination: HeroView(viewModel: HeroViewModel(name:champion.name)),
+                        label: {
+                            ChampionRowView(champion: champion)
+                        }
+                    )
+                }
+            }
+        }
+        
+        List(viewModel.proBuilds, id: \.id) { build in
+            NavigationLink(
+                destination: ProBuildView(),
+                label:{
+                    ProBuildRowView(proBuild: build)
+                }
+            )
+            Text(build.title)
+                .font(.headline)
+                .foregroundColor(.white)
+        }
+        .listRowBackground(Color.black)
+        
+        
     }
+}
     
     struct EditSummonerView: View {
         @Environment(\.presentationMode) var presentationMode
