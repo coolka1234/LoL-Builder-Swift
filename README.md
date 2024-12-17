@@ -23,3 +23,8 @@ Nie istnieją podobne rozwiązania na rynku. Zbliżone produkty są niezaktualiz
 •	Postacie w formie zdjęć i krótkiego opisu\
 •	Zaawansowane filtrowanie\
 •	Wyszukiwarka postaci  z autokompletowanie
+
+![Screenshot 2024-12-17 at 08 41 56](https://github.com/user-attachments/assets/7965c1fe-c42f-4bc7-8f54-b66e9e732275)
+![Screenshot 2024-12-17 at 08 43 02](https://github.com/user-attachments/assets/cb9bf6ca-5f25-4e64-89ca-6763d72bf37f)
+![Screenshot 2024-12-17 at 08 42 48](https://github.com/user-attachments/assets/face7a47-5b1b-4fe3-9b80-5d07d24b3af7)
+![Screenshot 2024-12-17 at 08 42 38](https://github.com/user-attachments/assets/a66c511f-c03d-45f5-9fcf-ae05f500652c)
