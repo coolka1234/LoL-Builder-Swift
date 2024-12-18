@@ -1,0 +1,16 @@
+PODS:
+  - LeagueAPI (4.3.0)
+
+DEPENDENCIES:
+  - LeagueAPI
+
+SPEC REPOS:
+  trunk:
+    - LeagueAPI
+
+SPEC CHECKSUMS:
+  LeagueAPI: 90b086771eade414b491d8b3c30d6b56e2c5b535
+
+PODFILE CHECKSUM: 63cc5ebbdf3f2d3afacf674db93fc8db262ede9b
+
+COCOAPODS: 1.16.2
